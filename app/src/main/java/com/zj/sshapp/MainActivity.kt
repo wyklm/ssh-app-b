@@ -126,7 +126,7 @@ class MainActivity : Activity() {
         if (current != null) {
             root.addView(horizontalLine())
             root.addView(TextView(this).apply {
-                text = "当前: ${current!!.name}"; textStyle = android.graphics.Typeface.BOLD
+                text = "当前: ${current!!.name}"; typeface = android.graphics.Typeface.DEFAULT_BOLD
             })
             cmdInput = EditText(this).apply {
                 hint = "输入命令，回车直接执行"
@@ -208,7 +208,7 @@ class MainActivity : Activity() {
 
         for ((cat, cmds) in categories) {
             root.addView(TextView(this).apply {
-                text = "【$cat】"; textStyle = android.graphics.Typeface.BOLD; textSize = 16f
+                text = "【$cat】"; typeface = android.graphics.Typeface.DEFAULT_BOLD; textSize = 16f
                 setPadding(0, 20, 0, 6)
             })
             for (c in cmds) {
