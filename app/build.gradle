@@ -1,0 +1,35 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.zj.sshapp'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.zj.sshapp"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    // 维护版 JSch，支持现代加密算法
+    implementation 'com.github.mwiede:jsch:0.2.18'
+    // B版终端模拟器（VT-100，支持 vim/top 等交互程序）
+    implementation 'com.github.jackpal.Android-Terminal-Emulator:emulatorview:v1.0.70'
+}
